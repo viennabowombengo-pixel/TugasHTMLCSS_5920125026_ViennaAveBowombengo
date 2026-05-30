@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mengenal Transparansi CSS</title>
+    <style>
+        /* Pengaturan dasar halaman */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Bungkus utama untuk mengelompokkan kotak */
+        .section-container {
+            display: flex;
+            gap: 100px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        /* Karakteristik dasar semua kotak */
+        .box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+
+        /* KOTAK DASAR (Warna Pink/Merah di Belakang) */
+        .bg-pink {
+            background-color: #ee3e80;
+            top: 0;
+        }
+        .left-group .bg-pink { left: 0; }
+        .right-group .bg-pink { left: 250px; }
+
+        /* ===================================================
+           1. KELOMPOK KIRI: Menggunakan RGBA
+           =================================================== */
+        .front-rgba {
+            top: 50px;
+            left: 50px;
+            /* r=0, g=0, b=0 (hitam), a=0.5 (transparansi 50%) */
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        /* ===================================================
+           2. KELOMPOK KANAN: Menggunakan Opacity
+           =================================================== */
+        .front-opacity {
+            top: 50px;
+            left: 300px;
+            background-color: #000000; /* Warna hitam pekat */
+            opacity: 0.5;              /* Membuat seluruh elemen transparan 50% */
+        }
+    </style>
+</head>
+<body>
+
+    <h3 style="color: #666; font-size: 14px; margin-bottom: 20px;"></h3>
+
+    <div class="section-container">
+        
+        <div class="left-group">
+            <div class="box bg-pink"></div>
+            <div class="box front-rgba"></div>
+        </div>
+
+        <div class="right-group">
+            <div class="box bg-pink"></div>
+            <div class="box front-opacity"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+</body>
